@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Business Assistant</title>
+  <style>/* Reset default styles for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Set global font and color */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    
+    /* Header styles */
+    header {
+      background-color: #333;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    nav ul {
+      list-style-type: none;
+    }
+    
+    nav li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #bbb;
+    }
+    
+    /* Hero section styles */
+    .hero {
+      background-color: #f5f5f5;
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    
+    /* Services section styles */
+    .services {
+      background-color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .services h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .service {
+      display: inline-block;
+      margin-bottom: 40px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    
+    .service a:hover {
+      color: #777;
+    }
+    
+    .service h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .service p {
+      line-height: 1.5;
+    }
+    
+    /* Button styles */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #555;
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 14px;
+    }
+    
+    /* Container styles */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 0 10px;
+      }
+    
+      header {
+        padding: 10px;
+      }
+    
+      nav li {
+        margin: 10px 0;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .hero h1 {
+        font-size: 24px;
+      }
+    
+      .hero p {
+        font-size: 16px;
+      }
+    
+      .services h2 {
+        font-size: 24px;
+      }
+    
+      .service h3 {
+        font-size: 20px;
+      }
+    
+      footer p {
+        font-size: 12px;
+      }
+    }
+    </style>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="gs">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="show">History</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Business Assistant</h1>
+      <p>Your trusted partner for business solutions</p>
+      <a href="gs" class="button">Get Started</a>
+    </div>
+  </section>
+  
+  <section class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service">
+        <a href="#">
+          <h3>Consulting</h3>
+          <p>We provide expert consulting services to help businesses thrive and grow.</p>
+        </a>
+      </div>
+      <div class="service">
+        <a href="#">
+          <h3>Financial Analysis</h3>
+          <p>Our financial analysis expertise assists in making informed business decisions.</p>
+        </a>
+      </div>
+      <div class="service">
+        <a href="#">
+          <h3>Strategic Planning</h3>
+          <p>We help businesses develop effective strategies to achieve their goals.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Business Assistant. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

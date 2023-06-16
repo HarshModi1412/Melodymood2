@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playlist generator</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gs.css')}}">
+</head>
+<body>
+    <header>
+      <h1>MelodyMood</h1>
+        <nav>
+          <ul>
+            <li><a href="index">Home</a></li>
+            <li><a href="gs">Generate</a></li>
+            <li><a href="ExPlay">Existing Playlists</a></li>
+            <li><a href="about">About</a></li>
+            
+          </ul>
+        </nav>
+      </header>
+      <br><br>
+    <div class="container">
+    <form action="{{ url_for('htmlgs') }}" method="POST">
+    <h2>Current Mood</h2>
+    <input type="text" class="textbox" id="mood1" name="mood1" placeholder="Describe your mood" />
+    <h2>Target Mood</h2>
+    <input type="text" class="textbox" id="mood2" name="mood2" placeholder="Mood you want to achieve" />
+    <br>
+    <button type="submit", class="button" onclick="showOutput()">Submit</button><br><br><br>
+    </div>
+    <div class="container2">
+      <div class="output" id="songs" name="songs">{{songs}}</div>
+   </div>
+    
+    
+</form>
+<div class="playlist-container">
+  <h2></h2>
+  <div class="playlist">
+    <!-- Add your playlist content here -->
+  </div>
+</div>
+</div>
+
+
+  <script>
+    function showOutput() {
+      var inputText = document.getElementById('inputText','inputText2').value;
+      var outputText = document.getElementById('outputText');
+      outputText.innerHTML = inputText;
+      return false;
+    }
+  </script>
+</body>
+</html>

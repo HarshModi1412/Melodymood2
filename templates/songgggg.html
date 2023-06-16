@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MelodyMood</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>/* Reset default browser styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Set global font and background styles */
+      body {
+        font-family: Arial, sans-serif;
+        
+        background-color: #FCFBFB;
+        color: #8A8785;
+        margin-top: 50px;
+      }
+      
+      /* Style the header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #FCFBFB;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+      header img {
+        height: 35px;
+        margin-right: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      header h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #5F5B5A;
+      }
+      
+      header nav ul {
+        list-style: none;
+        display: flex;
+        
+      }
+      
+      header nav li {
+        margin-left: 1rem;
+        
+      }
+      
+      header nav a {
+        color: #5F5B5A;;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      header nav a:hover {
+        color: #555;
+      }
+      
+      /* Style the hero section */
+      .hero-section {
+        background-image: url('aa.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-color: #3d3d3d;
+        color: #fff;
+        text-align: center;
+        padding: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .hero-content {
+        max-width: 900px;
+        max-height: 900px;
+      }
+      
+      .hero-content h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        background-color: #fff;
+        color: #3d3d3d;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      
+      .cta-button:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      
+      /* Style the resources section */
+      .resources-section {
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      
+      .resources-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      
+      .resource-tiles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 2rem;
+      }
+      
+      .resource-tiles .resource-tile {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      }
+      
+      .resource-tiles .resource-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      
+      .resource-tiles .resource-tile img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      }
+      
+      .resource-tiles .resource-tile h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      }
+      
+      .resource-tiles .resource-tile p {
+      font-size: 1rem;
+      text-align: center;
+      }
+      
+      /* Style the footer */
+      footer {
+      background-color: #f7f7f7;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      }
+      
+      .footer-content {
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      
+      .footer-content p {
+      font-size: 1rem;
+      }
+      
+      .footer-content nav ul {
+      list-style: none;
+      display: flex;
+      }
+      
+      .footer-content nav li {
+      margin-left: 1rem;
+      }
+      
+      .footer-content nav a {
+      color: #333;
+      text-decoration: none;
+      }
+      
+      .footer-content nav a:hover {
+      color: #555;
+      }  
+      .video-tile {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      
+      .video-tile img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .video-tile .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: url(play-button.png) no-repeat center center;
+        cursor: pointer;
+      }
+      
+      .video-tile video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+      
+      .video-tile video.show {
+        display: block;
+      }
+      
+      /* Blog Post Styling */
+      /* CSS for the blog post */
+      .blog-post {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 30px;
+      }
+      
+      .blog-post h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      
+      .blog-post p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      
+      .blog-post img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      
+      .blog-post a {
+        color: #333;
+        text-decoration: none;
+      }
+      
+      .blog-post a:hover {
+        color: #0099ff;
+        text-decoration: underline;
+      }
+      
+      .blog-post blockquote {
+        background-color: #fff;
+        border-left: 5px solid #0099ff;
+        padding: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .blog-post blockquote p {
+        font-style: italic;
+        margin: 0;
+      }
+      
+      .blog-post ul {
+        list-style: disc;
+        margin-bottom: 20px;
+      }
+      
+      .blog-post ol {
+        list-style: decimal;
+        margin-bottom: 20px;
+      }
+      
+      .blog-post li {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        margin-left: 20px;
+      }
+      
+      .blog-post code {
+        font-family: monospace;
+        font-size: 16px;
+        background-color: #f5f5f5;
+        padding: 5px;
+        margin-bottom: 20px;
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .blog-post pre {
+        font-family: monospace;
+        font-size: 16px;
+        background-color: #f5f5f5;
+        padding: 10px;
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+      /* Style for Blog Container */
+      .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
+          }
+          
+          .blog-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            border-radius: 10px;
+            background-color: white;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+          }
+          
+          .blog-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+          }
+          
+          .blog-tile h2 {
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          
+          .blog-tile img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 5px;
+          }
+          
+          .blog-tile p {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: center;
+          }
+          
+          .blog-tile a {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+          }
+          
+          .blog-tile:hover a {
+            opacity: 1;
+          }
+          
+          .blog-tile a:hover {
+            background-color: #005F6B;
+          }
+          
+          @media only screen and (max-width: 768px) {
+            .blog-tile {
+              width: 100%;
+              height: auto;
+            }
+          }
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f2f2f2;
+    
+      
+  
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      li {
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"], input[type="email"], textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+      }
+      
+      input[type="submit"] {
+        background-color: #ff6600;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #f4511e;
+      }
+      
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+      
+      /* Contact Container */
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f2f2f2;
+      }
+      
+      /* Contact Form */
+      .contact-form {
+        flex-basis: 50%;
+        max-width: 500px;
+        margin-right: 50px;
+      }
+      
+      .contact-form label {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+      
+      /* Contact Form */
+      .contact-form {
+        flex-basis: 50%;
+        max-width: 500px;
+        margin-right: 50px;
+      }
+      
+      .contact-form label {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+      
+      /* Contact Info */
+      .contact-info {
+        flex-basis: 50%;
+        max-width: 500px;
+      }
+      
+      .contact-info i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+        color: #ff6600;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .contact-container {
+          padding: 30px;
+        }
+        
+        .contact-form, .contact-info {
+          flex-basis: 100%;
+          max-width: 100%;
+          margin-right: 0;
+        }
+      }
+      </style>
+  </head>
+  <body>
+    <header>
+		
+      <h1>MelodyMood</h1>
+      <nav>
+        <ul>
+          <li><a href="index">Home</a></li>
+        <li><a href="gs">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="show">History</a></li>
+        </ul>
+      </nav>
+    </header>
+	  
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2>Music to Match Your Mood</h2>
+          <p>
+            Discover the perfect playlist to suit every mood and emotion with MelodyMood. Whether you're feeling upbeat, reflective, or somewhere in between, let our curated song suggestions elevate your experience.
+          </p>
+		
+          <a href="gs" class="cta-button">Get Started</a>
+        </div>
+      </section>
+      <section class="resources-section">
+        <h2>Resources</h2>
+        <div class="resource-tiles">
+          <div class="resource-tile">
+            <img
+              src="hero.jpg"
+              alt="Therapy session"
+            />
+            <h3>Find a therapist</h3>
+            <p>
+              Talking to a mental health professional can be an important part
+              of your recovery.
+            </p>
+          </div>
+          <div class="resource-tile">
+            <a href="MR.html"><img src="harshmodi1172_a_beautiful_image_of_meditation_24f6d633-4345-4ee9-8fae-8803e761bfb5.png" alt="Person meditating"></a>
+            <h3>Meditation resources</h3>
+            <p>
+              Meditation can help reduce stress and anxiety and improve overall
+              well-being.
+            </p>
+          </div>
+          <div class="resource-tile">
+            <img
+              src="harshmodi1172_a_169_aspect_ratio_beautiful_image_for_exercise_230e8ef2-4a89-42f9-9782-ad89a79b71e8.png"
+              alt="Person jogging"
+            />
+            <h3>Exercise resources</h3>
+            <p>
+              Exercise has been shown to have a positive impact on mental health
+              and can be a great way to manage symptoms.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="blog-section">
+        <h2>Latest from our blog</h2>
+        <div class="blog-posts">
+          <div class="blog-post">
+            <img
+              src="harshmodi1172_a_beautiful_image_on_The_Importance_of_Self-Care__4688585f-3aa9-4f8c-b770-09f4ea899b95.png"
+              alt="Person journaling"
+            />
+            <h3>Manipulating Heart Rate to Influence Emotions: Exploring the Connection</h3>
+            <p>&nbsp;</p>
+          </div>
+          <div class="blog-post">
+            <img
+              src="harshmodi1172_a_beautiful_image_on_Breaking_the_Stigma_Talking__6547d27e-80f9-4116-a7c4-b0d95ac1d9e5.png"
+              alt="Person reading a book"
+            />
+            <h3>Breaking the Stigma: Talking About Mental Health in the Workplace</h3>
+            <p>&nbsp;</p>
+          </div>
+          <div class="blog-post">
+            <img
+              src="harshmodi1172_a_very_beautiful_website_home_page_for_mental_hea_83b4659f-c9b1-4181-8fea-6a69ba877731.png"
+              alt="Person practicing yoga"
+            />
+            <h3>The Power of Gratitude: How it Can Improve Your Mental Health</h3>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <p>© 2023 Mental Health Awareness. All rights reserved.</p>
+        <nav>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+           

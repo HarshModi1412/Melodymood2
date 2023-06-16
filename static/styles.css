@@ -1,0 +1,221 @@
+/* Reset default styles for consistency */
+
+@font-face {
+  font-family: 'Ters';
+  src: url('TerselyRegular-z8LOL.ttf') format('truetype');
+  /* Add additional src lines for other font file formats if available */
+}
+
+@font-face {
+  font-family: 'Bul';
+  src: url('Bulgatti-xgMV.ttf') format('truetype');
+  /* Add additional src lines for other font file formats if available */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set global font and color */
+body {
+  background-image: url('hero1.jpg');
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+
+header h1{
+  font-family: 'ters', Arial, Helvetica, sans-serif;
+}
+
+.title1{
+  font-family: 'Bul', Arial, Helvetica, sans-serif;
+}
+/* Header styles */
+header {
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav li:first-child {
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #bbb;
+}
+
+/* Hero section styles */
+.hero {
+  
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Services section styles */
+.services {
+ 
+  padding: 50px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.service {
+  display: inline-block;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.service a:hover {
+  color: #ff9191;
+}
+
+.service h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  line-height: 1.5;
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(#ff000000, #ff38bd00);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border: 1px solid #fff; /* Add thin border line */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-image: url('grain-texture.png');
+  opacity: 0.2;
+  z-index: -1;
+}
+
+
+.button:hover {
+  background: linear-gradient(#ff0000ab, #ff38bdb7);
+  border: none; /* Add thin border line */
+}
+
+/* Footer styles */
+footer {
+  
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Container styles */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .services h2 {
+    font-size: 24px;
+  }
+
+  .service h3 {
+    font-size: 20px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}

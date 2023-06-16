@@ -1,0 +1,73 @@
+body {
+	font-family: sans-serif;
+	background-color: #ffffff;
+  }
+  
+  h1 {
+	font-size: 3em;
+	font-weight: bold;
+	margin-top: 0;
+  }
+  
+  h2 {
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 0;
+  }
+  
+  p {
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 1em;
+  }
+  
+  a {
+	text-decoration: none;
+	color: #000000;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  
+  #hero {
+	background-image: url(hero.jpg);
+	background-size: cover;
+	height: 100vh;
+	min-height: 300px;
+	text-align: center;
+	padding-top: 100px;
+  }
+  
+  #hero h2 {
+	color: #ffffff;
+  }
+  
+  #music, #blog {
+	margin-top: 50px;
+  }
+  
+  #music ul, #blog ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  #music ul li, #blog ul li {
+	display: inline-block;
+	margin-right: 20px;
+  }
+  
+  #music ul li a, #blog ul li a {
+	color: #000000;
+  }
+  
+  #music ul li a:hover, #blog ul li a:hover {
+	color: #ffffff;
+  }
+  
+  #footer {
+	background-color: #f0f0f0;
+	padding: 20px;
+  }
+  
